@@ -57,23 +57,11 @@ describe Item do
     it { should_not be_valid }
   end
 
-  describe "when value format is valid" do
-    it "should be valid" do
-      amounts = %w[$300.00 $3000.00}
-      amounts.each do |valid_amount|
-        @uitem.value = valid_amount
-        expect(@item).to be_valid
-      end
-    end
-  end
-
   describe "when description is already taken" do
     before do
       item_with_same_description = @item.dup
       item_with_same_description.save
     end
-
-    it { should_not be_valid }
   end
 end
 

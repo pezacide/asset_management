@@ -1,6 +1,5 @@
 AssetManagement::Application.routes.draw do
-  get "items/new"
-
+  resources :items
   root 'static_pages#home'
   match '/additem', to: 'items#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
